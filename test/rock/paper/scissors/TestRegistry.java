@@ -1,8 +1,13 @@
 package rock.paper.scissors;
 
-import java.util.List;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsProvider;
 
-public class TestRegistry {
+import java.util.List;
+import java.util.stream.Stream;
+
+public class TestRegistry implements ArgumentsProvider {
 
     private static final List<TestData> TEST_DATA = List.of(
             new TestData<>(new rock.paper.scissors.simple.map.MapGame(), rock.paper.scissors.simple.map.MOVE.ROCK, rock.paper.scissors.simple.map.MOVE.PAPER, rock.paper.scissors.simple.map.MOVE.SCISSORS),
@@ -11,9 +16,10 @@ public class TestRegistry {
             new TestData<>(new rock.paper.scissors.another.polymorphism.AnotherPolymorphism(), rock.paper.scissors.another.polymorphism.Move.Moves.ROCK, rock.paper.scissors.another.polymorphism.Move.Moves.PAPER, rock.paper.scissors.another.polymorphism.Move.Moves.SCISSORS)
             );
 
-    static List<TestData> testData() {
-                return TEST_DATA;
-            }
+    @Override
+    public Stream<? extends Arguments> provideArguments(ExtensionContext extensionContext) {
+        return TEST_DATA.stream().map(Arguments::of);
+    }
 
-    public record TestData<M>(Game<M> game, M rock, M paper, M scissors){ }
+    public record TestData<M>(Game<M> game, M rock, M paper, M scissors) { }
 }
