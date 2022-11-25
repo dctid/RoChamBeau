@@ -1,11 +1,11 @@
 package rock.paper.scissors.complicated.enumeration.with.lambda;
 
 
-import rock.paper.scissors.IGame;
+import rock.paper.scissors.Game;
 
 import static rock.paper.scissors.Constants.*;
 
-public class ComplicatedEnumerationWithLambde implements IGame<MOVE>  {
+public class ComplicatedEnumerationWithLambde implements Game<MOVE> {
 
     public String play(MOVE player1, MOVE player2) {
         return switch (player1.versus(player2)) {

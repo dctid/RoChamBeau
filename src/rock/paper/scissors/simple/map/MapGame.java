@@ -1,12 +1,12 @@
 package rock.paper.scissors.simple.map;
 
-import rock.paper.scissors.IGame;
+import rock.paper.scissors.Game;
 
 import java.util.Map;
 
 import static rock.paper.scissors.Constants.*;
 
-public class MapGame implements IGame<MOVE> {
+public class MapGame implements Game<MOVE> {
 
     private static final Map<MOVE, Map<MOVE, String>> results =
             Map.of(
