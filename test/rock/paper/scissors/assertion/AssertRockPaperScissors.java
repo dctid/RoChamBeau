@@ -15,7 +15,7 @@ public class AssertRockPaperScissors {
     }
 
     private static <M> String testFailedMessage(AssertRockPaperScissors.ResultData<M> data) {
-        return "Class [%s] failed when [%s] played [%s]".formatted(data.game.getClass().getSimpleName(), data.player1Move, data.player2Move);
+        return "Class [%s] failed when [%s] played [%s]".formatted(data.game.getClass().getSimpleName(), data.player1Move.getClass().getSimpleName(), data.player2Move.getClass().getSimpleName());
     }
 
     public static class GameData<M> {
