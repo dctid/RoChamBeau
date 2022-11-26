@@ -38,7 +38,7 @@ public class AssertRockPaperScissors {
             this.player1Move = player1Move;
         }
 
-        public Player2MoveData<M> andPlayer2moveIs(M player2Move){
+        public Player2MoveData<M> andPlayer2MoveIs(M player2Move){
             return new Player2MoveData<>(this, player2Move);
         }
 
