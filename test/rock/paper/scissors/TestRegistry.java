@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 public class TestRegistry implements ArgumentsProvider {
 
-    private static final List<TestData> TEST_DATA = List.of(
+    private static final List<TestData<?>> TEST_DATA = List.of(
             new TestData<>(new rock.paper.scissors.simple.map.MapGame(), rock.paper.scissors.simple.map.MOVE.ROCK, rock.paper.scissors.simple.map.MOVE.PAPER, rock.paper.scissors.simple.map.MOVE.SCISSORS),
             new TestData<>(new rock.paper.scissors.sort.of.polymorphism.SortOfPolymorphismGame(), new rock.paper.scissors.sort.of.polymorphism.Move.Rock(), new rock.paper.scissors.sort.of.polymorphism.Move.Paper(), new rock.paper.scissors.sort.of.polymorphism.Move.Scissors()),
             new TestData<>(new rock.paper.scissors.complicated.enumeration.with.lambda.ComplicatedEnumerationWithLambde(), rock.paper.scissors.complicated.enumeration.with.lambda.MOVE.ROCK, rock.paper.scissors.complicated.enumeration.with.lambda.MOVE.PAPER, rock.paper.scissors.complicated.enumeration.with.lambda.MOVE.SCISSORS),
